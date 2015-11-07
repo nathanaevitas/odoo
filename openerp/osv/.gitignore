@@ -1,0 +1,6 @@
+/__init__.pyc
+/expression.pyc
+/fields.pyc
+/orm.pyc
+/osv.pyc
+/query.pyc

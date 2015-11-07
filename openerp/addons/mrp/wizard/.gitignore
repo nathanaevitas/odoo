@@ -1,0 +1,6 @@
+/__init__.pyc
+/change_production_qty.pyc
+/mrp_price.pyc
+/mrp_product_produce.pyc
+/mrp_workcenter_load.pyc
+/stock_move.pyc

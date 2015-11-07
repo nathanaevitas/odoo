@@ -1,0 +1,13 @@
+/__init__.pyc
+/__openerp__.pyc
+/base_partner_merge.pyc
+/calendar_event.pyc
+/crm.pyc
+/crm_lead.pyc
+/crm_phonecall.pyc
+/crm_segmentation.pyc
+/ir_http.pyc
+/res_config.pyc
+/res_partner.pyc
+/sales_team.pyc
+/validate_email.pyc

@@ -1,0 +1,5 @@
+/__init__.pyc
+/__openerp__.pyc
+/account_invoice.pyc
+/account_move_line.pyc
+/account_payment.pyc

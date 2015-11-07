@@ -1,0 +1,7 @@
+/__init__.pyc
+/test_attributes.pyc
+/test_field_conversions.pyc
+/test_new_fields.pyc
+/test_no_infinite_recursion.pyc
+/test_onchange.pyc
+/test_related.pyc

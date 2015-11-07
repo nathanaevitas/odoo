@@ -1,0 +1,16 @@
+/__init__.pyc
+/__openerp__.pyc
+/ir_attachment.pyc
+/mail_alias.pyc
+/mail_followers.pyc
+/mail_group.pyc
+/mail_group_menu.pyc
+/mail_mail.pyc
+/mail_message.pyc
+/mail_message_subtype.pyc
+/mail_thread.pyc
+/mail_vote.pyc
+/res_config.pyc
+/res_partner.pyc
+/res_users.pyc
+/update.pyc

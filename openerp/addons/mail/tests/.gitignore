@@ -1,0 +1,8 @@
+/__init__.pyc
+/common.pyc
+/test_invite.pyc
+/test_mail_features.pyc
+/test_mail_gateway.pyc
+/test_mail_group.pyc
+/test_mail_message.pyc
+/test_message_read.pyc

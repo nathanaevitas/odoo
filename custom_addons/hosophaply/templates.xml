@@ -1,0 +1,58 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="hosophaply_form_view">
+			<field name="name">Ho So Form View</field>
+			<field name="model">hosophaply.hosophaply</field>
+			<field name="arch" type="xml">
+				<form string="Khach hang">
+					<sheet>
+						<group>
+							<field name="tenhoso"/>
+							<field name="tenkhachhang"/>
+							<field name="sdt"/>
+							<field name="yeucau"/>
+							<field name="ngayhentra"/>
+							<field name="email"/>
+							<field name="phone"/>
+							<field name="nguon"/>
+							<field name="dichvu"/>
+							<field name="dv_thietke"/>
+							<field name="dv_thicong"/>
+							<field name="dv_doitac"/>
+							<field name="phutrach"/>
+							<field name="da_chot"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="phaply_tree_view">
+			<field name="name"></field>
+			<field name="model"></field>
+			<field name="arch" type="xml">
+				<tree string="DS Khach Hang">
+					<field name="ten"/>
+					<field name="ngaytiepnhan"/>
+					<field name="nguon"/>
+					<field name="dichvu"/>
+					<field name="dv_thietke"/>
+					<field name="dv_thicong"/>
+					<field name="dv_doitac"/>
+					<field name="phutrach"/>
+					<field name="da_chot"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="phaply_phaply_action">
+			<record name="name">Phap Ly</record>
+			<record name="res_model">phaply.phaply</record>
+			<record name="view_mod">tree,form</record>
+		</record>
+		
+		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
+		<menuitem name="Khach Hang" id="khachhang_phaply_menu" parent="phaply_menu" sequence="10"/>
+		<menuitem name="Thong tin KH" id="thongtin_kh_phaply_menu" parent="khachhang_phaply_menu" sequence="10" action="phaply_phaply_action"/>
+    </data>
+</openerp>

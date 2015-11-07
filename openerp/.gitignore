@@ -1,0 +1,11 @@
+/__init__.pyc
+/api.pyc
+/exceptions.pyc
+/fields.pyc
+/http.pyc
+/loglevels.pyc
+/models.pyc
+/netsvc.pyc
+/pooler.pyc
+/release.pyc
+/sql_db.pyc
