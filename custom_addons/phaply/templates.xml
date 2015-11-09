@@ -20,8 +20,13 @@
 							<field name="dv_thicong"/>
 							<field name="dv_doitac"/>
 							<field name="phutrach"/>
-							<field name="da_chot"/>
+							<field name="trangthai"/>
 						</group>
+						<notebook>
+							<page string="Hoat dong">
+								<field name="hoatdong"/>
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			</field>
@@ -40,7 +45,7 @@
 					<field name="dv_thicong"/>
 					<field name="dv_doitac"/>
 					<field name="phutrach"/>
-					<field name="da_chot"/>
+					<field name="trangthai"/>
 				</tree>
 			</field>
 		</record>
@@ -119,5 +124,37 @@
 		</record>
 		
 		<menuitem name="Dich vu" id="phaply_dichvu_menu" parent="phaply_tuychinh_menu" sequence="10" action="phaply_dichvu_action"/>
+		
+		<record model="ir.ui.view" id="phaply_doitac_form">
+			<field name="name">Doi tac KH Form</field>
+			<field name="model">phaply.doitac</field>
+			<field name="arch" type="xml">
+				<form string="Doi tac">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="phaply_doitac_tree">
+			<field name="name">Doi tac KH Tree</field>
+			<field name="model">phaply.doitac</field>
+			<field name="arch" type="xml">
+				<tree string="Doi tac">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="phaply_doitac_action">
+			<field name="name">Doi tac</field>
+			<field name="res_model">phaply.doitac</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Doi tac" id="phaply_doitac_menu" parent="phaply_tuychinh_menu" sequence="20" action="phaply_doitac_action"/>
     </data>
 </openerp>

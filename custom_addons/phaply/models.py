@@ -8,24 +8,25 @@ class phaply(models.Model):
     """
     _name = 'phaply.phaply'
     
-    name = fields.Char(string='Ten KH')
+    name = fields.Many2one(string='Ten KH', comodel_name='res.partner')
     ngaysinh = fields.Date(string='Ngay sinh')
     gioitinh = fields.Selection([('m', 'Nam'), ('f', 'Nu')], string='Gioi tinh')
     
     quan = fields.Char(string='Quan')
     ngaytiepnhan = fields.Datetime(String='Ngay gio tiep nhan')
-    email = fields.Char(string='Email')
-    phone = fields.Char(string='Phone')
+    email = fields.Char(string='Email', store=True, readonly=True, related='name.email')
+    phone = fields.Char(string='Mobile', store=True, readonly=True, related='name.mobile')
     nguon = fields.Many2one(string='Nguon', comodel_name='phaply.nguon')
     
     dv_thietke = fields.Boolean(string='Da co thiet ke')
     dv_thicong = fields.Boolean(string='Da co thi cong')
-    dv_doitac = fields.Char(string='Doi tac')
+    dv_doitac = fields.Many2one(string='Doi tac', comodel_name='phaply.doitac')
     
     dichvu = fields.Many2one(string='Dich vu', comodel_name='phaply.dichvu')
     phutrach = fields.Many2one(string='Nguoi phu trach', comodel_name='hr.employee')
     
-    da_chot = fields.Boolean(string='Da chot')
+    trangthai = fields.Selection([('d', 'Dang deal'), ('y', 'Da chot'), ('n', 'Khong duoc')], string='Trang thai')
+    hoatdong = fields.One2many(string="Hoat dong", comodel_name="hoatdongpl.hoatdongpl", inverse_name="name")
     
 class nguon(models.Model):
     """
@@ -44,3 +45,12 @@ class dichvu(models.Model):
     
     name = fields.Char(string='Dich vu')
     dichvu_id = fields.One2many(string='Dich vu ID', comodel_name='phaply.phaply', inverse_name='dichvu')
+    
+class doitac(models.Model):
+    """
+    Dich vu phap ly
+    """
+    _name = 'phaply.doitac'
+    
+    name = fields.Char(string='Doi tac')
+    doitac_id = fields.One2many(string='Doi tac ID', comodel_name='phaply.phaply', inverse_name='dv_doitac')
