@@ -5,7 +5,7 @@ from openerp import models, fields, api
 class hosophaply(models.Model):
     _name = 'hosophaply.hosophaply'
 
-    tenhoso = fields.Char(string='Ten ho so')
+    name = fields.Char(string='Ten ho so')
     tenkhachhang = fields.Char(string='Ten KH')
     sdt = fields.Integer(string='So dien thoai')
     yeucau = fields.Text(string='Yeu cau KH')

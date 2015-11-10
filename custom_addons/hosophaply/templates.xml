@@ -4,23 +4,26 @@
 			<field name="name">Ho So Form View</field>
 			<field name="model">hosophaply.hosophaply</field>
 			<field name="arch" type="xml">
-				<form string="Khach hang">
+				<form string="Ho So">
 					<sheet>
 						<group>
-							<field name="tenhoso"/>
+							<field name="name"/>
 							<field name="tenkhachhang"/>
 							<field name="sdt"/>
 							<field name="yeucau"/>
 							<field name="ngayhentra"/>
-							<field name="email"/>
-							<field name="phone"/>
-							<field name="nguon"/>
-							<field name="dichvu"/>
-							<field name="dv_thietke"/>
-							<field name="dv_thicong"/>
-							<field name="dv_doitac"/>
-							<field name="phutrach"/>
-							<field name="da_chot"/>
+							<field name="phidichvu"/>
+							<field name="daung"/>
+							<field name="diachi"/>
+							<field name="xaphuong"/>
+							<field name="quanhuyen"/>
+							<field name="nguoilam"/>
+							<field name="ngaytiepnhan"/>
+							<field name="biennhanhs"/>
+							<field name="ngaygiaohs"/>
+							<field name="phanhoi"/>
+							<field name="lydo"/>
+							<field name="ghichu"/>
 						</group>
 					</sheet>
 				</form>
@@ -28,31 +31,34 @@
 		</record>
 		
 		<record model="ir.ui.view" id="phaply_tree_view">
-			<field name="name"></field>
-			<field name="model"></field>
+			<field name="name">Ho So Tree</field>
+			<field name="model">hosophaply.hosophaply</field>
 			<field name="arch" type="xml">
-				<tree string="DS Khach Hang">
-					<field name="ten"/>
+				<tree string="Ho So">
+					<field name="name"/>
+					<field name="tenkhachhang"/>
+					<field name="sdt"/>
+					<field name="yeucau"/>
+					<field name="ngayhentra"/>
+					<field name="phidichvu"/>
+					<field name="daung"/>
+					<field name="diachi"/>
+					<field name="xaphuong"/>
+					<field name="quanhuyen"/>
+					<field name="nguoilam"/>
 					<field name="ngaytiepnhan"/>
-					<field name="nguon"/>
-					<field name="dichvu"/>
-					<field name="dv_thietke"/>
-					<field name="dv_thicong"/>
-					<field name="dv_doitac"/>
-					<field name="phutrach"/>
-					<field name="da_chot"/>
+					<field name="biennhanhs"/>
+					<field name="ngaygiaohs"/>
 				</tree>
 			</field>
 		</record>
 		
-		<record model="ir.actions.act_window" id="phaply_phaply_action">
-			<record name="name">Phap Ly</record>
-			<record name="res_model">phaply.phaply</record>
-			<record name="view_mod">tree,form</record>
+		<record model="ir.actions.act_window" id="hosopl_action">
+			<field name="name">Ho So</field>
+			<field name="res_model">hosophaply.hosophaply</field>
+			<field name="view_mod">tree,form</field>
 		</record>
 		
-		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
-		<menuitem name="Khach Hang" id="khachhang_phaply_menu" parent="phaply_menu" sequence="10"/>
-		<menuitem name="Thong tin KH" id="thongtin_kh_phaply_menu" parent="khachhang_phaply_menu" sequence="10" action="phaply_phaply_action"/>
+		<menuitem name="Ho So" id="hoso_phaply_menu" parent="khachhang_phaply_menu" sequence="20" action="hosopl_action"/>
     </data>
 </openerp>

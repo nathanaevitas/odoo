@@ -26,6 +26,9 @@
 							<page string="Hoat dong">
 								<field name="hoatdong"/>
 							</page>
+							<page string="Ho So">
+								<field name="hoso"/>
+							</page>
 						</notebook>
 					</sheet>
 				</form>

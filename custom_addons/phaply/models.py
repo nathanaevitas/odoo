@@ -8,7 +8,7 @@ class phaply(models.Model):
     """
     _name = 'phaply.phaply'
     
-    name = fields.Many2one(string='Ten KH', comodel_name='res.partner')
+    name = fields.Many2one(string='Ten KH', comodel_name='res.partner',required=True)
     ngaysinh = fields.Date(string='Ngay sinh')
     gioitinh = fields.Selection([('m', 'Nam'), ('f', 'Nu')], string='Gioi tinh')
     
@@ -26,7 +26,9 @@ class phaply(models.Model):
     phutrach = fields.Many2one(string='Nguoi phu trach', comodel_name='hr.employee')
     
     trangthai = fields.Selection([('d', 'Dang deal'), ('y', 'Da chot'), ('n', 'Khong duoc')], string='Trang thai')
-    hoatdong = fields.Many2many(string="Hoat dong", comodel_name="hoatdongpl.hoatdongpl", relation="hoatdong_pl_rel", column1="hoatdong_id", column2="phutrach")
+    
+    hoatdong = fields.Many2many(string='Hoat dong', comodel_name='hoatdongpl.hoatdongpl', relation='hoatdong_pl_rel', column1='hoatdong_id', column2='phutrach')
+    hoso = fields.Many2many(string="Ho so", comodel_name='hosophaply.hoso', relation='hosophaply_rel', column1='hoso_id', column2='name')
     
 class nguon(models.Model):
     """
