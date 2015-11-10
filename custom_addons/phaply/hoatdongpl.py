@@ -7,8 +7,10 @@ class hoatdongpl(models.Model):
     
     name = fields.Char(string='Ten hoat dong')
     loai = fields.Many2one(string='Loai hoat dong', comodel_name='hoatdongpl.loai')
+    ngaygio = fields.Datetime(string='Ngay gio')
     ketqua = fields.Many2one(string='Ket qua', comodel_name='hoatdongpl.ketqua')
     ghichu = fields.Text(string='Ghi chu')
+    hoatdong_id = fields.Many2one(string='Hoat dong', comodel_name='phaply.phaply')
     
 class loaihoatdong(models.Model):
     _name = 'hoatdongpl.loai'

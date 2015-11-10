@@ -26,7 +26,7 @@ class phaply(models.Model):
     phutrach = fields.Many2one(string='Nguoi phu trach', comodel_name='hr.employee')
     
     trangthai = fields.Selection([('d', 'Dang deal'), ('y', 'Da chot'), ('n', 'Khong duoc')], string='Trang thai')
-    hoatdong = fields.One2many(string="Hoat dong", comodel_name="hoatdongpl.hoatdongpl", inverse_name="name")
+    hoatdong = fields.Many2many(string="Hoat dong", comodel_name="hoatdongpl.hoatdongpl", relation="hoatdong_pl_rel", column1="hoatdong_id", column2="phutrach")
     
 class nguon(models.Model):
     """

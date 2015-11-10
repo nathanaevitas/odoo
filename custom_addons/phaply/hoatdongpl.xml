@@ -36,7 +36,7 @@
     		<field name="view_mode">tree,form</field>
     	</record>
     	
-    	<menuitem name="Hoat dong" id="phaply_hoatdong_menu" parent="phaply_menu" sequence="15"/>
+    	<menuitem name="Hoat dong" id="phaply_hoatdong_menu" parent="phaply_menu" sequence="14"/>
 		<menuitem name="Hoat dong" id="hoatdong_thongtin_menu" parent="phaply_hoatdong_menu" sequence="10" action="hoatdongpl_action"/>
 		
 		<record model="ir.ui.view" id="loaihd_form_view">

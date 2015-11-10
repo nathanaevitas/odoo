@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//custom_addons/hosophaply/__openerp__.py=utf-8
 encoding//custom_addons/hosophaply/models.py=utf-8
+encoding//custom_addons/phaply/hoatdongpl.py=utf-8
+encoding//custom_addons/phaply/models.py=utf-8
 encoding//custom_addons/students/models.py=utf-8
 encoding//custom_addons/study_room/__openerp__.py=utf-8
 encoding//custom_addons/study_room/controllers.py=utf-8
