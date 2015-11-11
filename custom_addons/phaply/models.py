@@ -8,12 +8,12 @@ class phaply(models.Model):
     """
     _name = 'phaply.phaply'
     
-    name = fields.Many2one(string='Ten KH', comodel_name='res.partner',required=True)
+    name = fields.Many2one(string='Ten KH', comodel_name='res.partner', required=True)
     ngaysinh = fields.Date(string='Ngay sinh')
     gioitinh = fields.Selection([('m', 'Nam'), ('f', 'Nu')], string='Gioi tinh')
     
     quan = fields.Char(string='Quan')
-    ngaytiepnhan = fields.Datetime(String='Ngay gio tiep nhan')
+    ngaytiepnhan = fields.Datetime(string='Ngay gio tiep nhan')
     email = fields.Char(string='Email', store=True, readonly=True, related='name.email')
     phone = fields.Char(string='Mobile', store=True, readonly=True, related='name.mobile')
     nguon = fields.Many2one(string='Nguon', comodel_name='phaply.nguon')

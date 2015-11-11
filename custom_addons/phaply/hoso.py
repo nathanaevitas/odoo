@@ -6,8 +6,8 @@ class hosophaply(models.Model):
     _name = 'hosophaply.hoso'
 
     name = fields.Char(string='Ten ho so', required=True)
-    tenkhachhang = fields.Char(string='Ten KH')
-    sdt = fields.Integer(string='So dien thoai')
+    tenkhachhang = fields.Many2one(string='Ten KH', comodel_name='phaply.phaply', required=True)
+    sdt = fields.Char(string='So dien thoai', related='tenkhachhang.phone', required=True)
     yeucau = fields.Text(string='Yeu cau KH')
     ngayhentra = fields.Date(string='Ngay hen tra')
     
@@ -18,7 +18,7 @@ class hosophaply(models.Model):
     xaphuong = fields.Char(string='Xa / Phuong')
     quanhuyen = fields.Char(string='Quan / Huyen')
     
-    nguoilam = fields.Char(string='Nguoi lam HS')
+    nguoilam = fields.Many2one(string='Nguoi lam HS', related='tenkhachhang.phutrach', readonly=True)
     ngaytiepnhan = fields.Date(string='Ngay tiep nhan')
     biennhanhs = fields.Date(string='Ngay bien nhan')
     ngaygiaohs = fields.Date(string='Ngay giao HS')
