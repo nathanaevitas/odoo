@@ -27,7 +27,19 @@
 								<field name="hoatdong"/>
 							</page>
 							<page string="Ho So">
-								<field name="hoso"/>
+								<field name="hoso">
+									<field name="name"/>
+									<field name="tenkhachhang"/>
+									<field name="sdt"/>
+									<field name="ngayhentra"/>
+									<field name="phidichvu"/>
+									<field name="daung"/>
+									<field name="quanhuyen"/>
+									<field name="nguoilam"/>
+									<field name="ngaytiepnhan"/>
+									<field name="biennhanhs"/>
+									<field name="ngaygiaohs"/>
+								</field>
 							</page>
 						</notebook>
 					</sheet>
