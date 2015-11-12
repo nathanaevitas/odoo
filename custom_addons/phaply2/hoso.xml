@@ -1,0 +1,66 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="hoso_form_view">
+			<field name="name">Ho So Form View</field>
+			<field name="model">phaply2.hoso</field>
+			<field name="arch" type="xml">
+				<form string="Ho So">
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="tenkhachhang"/>
+							<field name="sdt"/>
+							<field name="yeucau"/>
+							<field name="ngayhentra"/>
+							<field name="phidichvu"/>
+							<field name="daung"/>
+							<field name="diachi"/>
+							<field name="xaphuong"/>
+							<field name="quanhuyen"/>
+							<field name="nguoilam"/>
+							<field name="ngaytiepnhan"/>
+							<field name="biennhanhs"/>
+							<field name="ngaygiaohs"/>
+							<field name="phanhoi"/>
+							<field name="lydo"/>
+							<field name="ghichu"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="hoso_tree_view">
+			<field name="name">Ho So Tree</field>
+			<field name="model">phaply2.hoso</field>
+			<field name="arch" type="xml">
+				<tree string="Ho So">
+					<field name="name"/>
+					<field name="tenkhachhang"/>
+					<field name="sdt"/>
+					<field name="yeucau"/>
+					<field name="ngayhentra"/>
+					<field name="phidichvu"/>
+					<field name="daung"/>
+					<field name="diachi"/>
+					<field name="xaphuong"/>
+					<field name="quanhuyen"/>
+					<field name="nguoilam"/>
+					<field name="ngaytiepnhan"/>
+					<field name="biennhanhs"/>
+					<field name="ngaygiaohs"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="hoso2_action">
+			<field name="name">Ho So</field>
+			<field name="res_model">phaply2.hoso</field>
+			<field name="view_mod">tree,form</field>
+		</record>
+		
+		<menuitem name="Phap Ly2" id="phaply2_menu" sequence="85"/>
+		<menuitem name="Ho so" id="hoso_menu" parent="phaply2_menu" sequence="10"/>
+		<menuitem name="Ho so" id="hoso2_phaply_menu" parent="phaply2_menu" sequence="10" action="hoso2_action"/>
+    </data>
+</openerp>
