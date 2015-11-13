@@ -53,14 +53,37 @@
 			</field>
 		</record>
 		
+        <!-- calendar view -->
+        <record model="ir.ui.view" id="hoso_calendar_view">
+            <field name="name">hoso.calendar</field>
+            <field name="model">phaply2.hoso</field>
+            <field name="arch" type="xml">
+                <calendar string="Ho So Calendar" date_start="biennhanhs"
+                          date_stop="ngaygiaohs"
+                          color="nguoilam">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="hoso_gantt_view">
+            <field name="name">phaply2.gantt</field>
+            <field name="model">phaply2.hoso</field>
+            <field name="arch" type="xml">
+                <gantt string="Ho So Gantt" color="nguoilam" date_start="biennhanhs" date_delay="hours" default_group_by='tenkhachhang'>
+                    <field name="name"/>
+                </gantt>
+            </field>
+        </record>
+		
 		<record model="ir.actions.act_window" id="hoso2_action">
 			<field name="name">Ho So</field>
 			<field name="res_model">phaply2.hoso</field>
-			<field name="view_mod">tree,form</field>
+			<field name="view_mode">tree,form,calendar,gantt</field>
 		</record>
 		
 		<menuitem name="Phap Ly2" id="phaply2_menu" sequence="85"/>
 		<menuitem name="Ho so" id="hoso_menu" parent="phaply2_menu" sequence="10"/>
-		<menuitem name="Ho so" id="hoso2_phaply_menu" parent="phaply2_menu" sequence="10" action="hoso2_action"/>
+		<menuitem name="Thong tin HS" id="hoso2_phaply_menu" parent="hoso_menu" sequence="10" action="hoso2_action"/>
     </data>
 </openerp>
