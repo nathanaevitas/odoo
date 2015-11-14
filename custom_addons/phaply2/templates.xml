@@ -7,14 +7,23 @@
     		<field name="arch" type="xml">
 				<xpath expr="//notebook" position="before">
     				<group>
-						<field name="thietke"/>
-						<field name="thicong"/>
-						<field name="cohoihoptac"/>
+						<field name="design"/>
+						<field name="construct"/>
+						<field name="partner"/>
 					</group>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page string="Ho so">
-						<field name="hoso"/>
+						<field name="docs">
+							<field name="name"/>
+							<field name="deadline"/>
+							<field name="cost"/>
+							<field name="paid"/>
+							<field name="day_reception"/>
+							<field name="date_start"/>
+							<field name="date_end"/>
+							<field name="emloyee"/>
+						</field>
 					</page>
 				</xpath>
 			</field>					

@@ -1,29 +1,29 @@
 <openerp>
     <data>
 		<record model="ir.ui.view" id="hoso_form_view">
-			<field name="name">Ho So Form View</field>
-			<field name="model">phaply2.hoso</field>
+			<field name="name">phaply.hoso.form</field>
+			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
-				<form string="Ho So">
+				<form string="Ho So Form">
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="tenkhachhang"/>
-							<field name="sdt"/>
-							<field name="yeucau"/>
-							<field name="ngayhentra"/>
-							<field name="phidichvu"/>
-							<field name="daung"/>
-							<field name="diachi"/>
-							<field name="xaphuong"/>
-							<field name="quanhuyen"/>
-							<field name="nguoilam"/>
-							<field name="ngaytiepnhan"/>
-							<field name="biennhanhs"/>
-							<field name="ngaygiaohs"/>
-							<field name="phanhoi"/>
-							<field name="lydo"/>
-							<field name="ghichu"/>
+							<field name="customer"/>
+							<field name="phone"/>
+							<field name="request"/>
+							<field name="deadline"/>
+							<field name="cost"/>
+							<field name="paid"/>
+							<field name="address"/>
+							<field name="ward"/>
+							<field name="district"/>
+							<field name="emloyee"/>
+							<field name="day_reception"/>
+							<field name="date_start"/>
+							<field name="date_end"/>
+							<field name="feedback"/>
+							<field name="reason"/>
+							<field name="note"/>
 						</group>
 					</sheet>
 				</form>
@@ -31,59 +31,60 @@
 		</record>
 		
 		<record model="ir.ui.view" id="hoso_tree_view">
-			<field name="name">Ho So Tree</field>
-			<field name="model">phaply2.hoso</field>
+			<field name="name">phaply.hoso.tree</field>
+			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
-				<tree string="Ho So">
+				<tree string="Ho So Tree">
 					<field name="name"/>
-					<field name="tenkhachhang"/>
-					<field name="sdt"/>
-					<field name="yeucau"/>
-					<field name="ngayhentra"/>
-					<field name="phidichvu"/>
-					<field name="daung"/>
-					<field name="diachi"/>
-					<field name="xaphuong"/>
-					<field name="quanhuyen"/>
-					<field name="nguoilam"/>
-					<field name="ngaytiepnhan"/>
-					<field name="biennhanhs"/>
-					<field name="ngaygiaohs"/>
+					<field name="customer"/>
+					<field name="phone"/>
+					<field name="request"/>
+					<field name="deadline"/>
+					<field name="cost"/>
+					<field name="paid"/>
+					<field name="address"/>
+					<field name="ward"/>
+					<field name="district"/>
+					<field name="emloyee"/>
+					<field name="day_reception"/>
+					<field name="date_start"/>
+					<field name="date_end"/>
 				</tree>
 			</field>
 		</record>
 		
         <!-- calendar view -->
         <record model="ir.ui.view" id="hoso_calendar_view">
-            <field name="name">hoso.calendar</field>
-            <field name="model">phaply2.hoso</field>
+            <field name="name">phaply.hoso.calendar</field>
+            <field name="model">phaply.hoso</field>
             <field name="arch" type="xml">
-                <calendar string="Ho So Calendar" date_start="biennhanhs"
-                          date_stop="ngaygiaohs"
-                          color="nguoilam">
+                <calendar string="Ho So Calendar" date_start="date_start"
+                          date_stop="date_end"
+                          color="emloyee">
                     <field name="name"/>
                 </calendar>
             </field>
         </record>
         
-        <record model="ir.ui.view" id="hoso_gantt_view">
-            <field name="name">phaply2.gantt</field>
-            <field name="model">phaply2.hoso</field>
+        <record model="ir.ui.view" id="hoso_graph_view">
+            <field name="name">phaply.hoso.graph</field>
+            <field name="model">phaply.hoso</field>
             <field name="arch" type="xml">
-                <gantt string="Ho So Gantt" color="nguoilam" date_start="biennhanhs" date_delay="hours" default_group_by='tenkhachhang'>
-                    <field name="name"/>
-                </gantt>
+                <graph string="Ho So Graph">
+                    <field name="doc_id"/>
+                    <field name="district" type="measure"/>
+                </graph>
             </field>
         </record>
 		
-		<record model="ir.actions.act_window" id="hoso2_action">
-			<field name="name">Ho So</field>
-			<field name="res_model">phaply2.hoso</field>
-			<field name="view_mode">tree,form,calendar,gantt</field>
+		<record model="ir.actions.act_window" id="phaply_hoso_action">
+			<field name="name">phaply.hoso.action</field>
+			<field name="res_model">phaply.hoso</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
 		</record>
 		
-		<menuitem name="Phap Ly2" id="phaply2_menu" sequence="85"/>
-		<menuitem name="Ho so" id="hoso_menu" parent="phaply2_menu" sequence="10"/>
-		<menuitem name="Thong tin HS" id="hoso2_phaply_menu" parent="hoso_menu" sequence="10" action="hoso2_action"/>
+		<menuitem name="Ho So" id="phaply_menu" sequence="85"/>
+		<menuitem name="Ho So" id="hoso_menu" parent="phaply_menu" sequence="10"/>
+		<menuitem name="Thong tin HS" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
     </data>
 </openerp>

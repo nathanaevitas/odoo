@@ -1,35 +1,38 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Phap Ly",
+    'name': "Open Academy",
 
-    'summary': """
-        Module quan ly cong viec va ho so mang phap ly.""",
+    'summary': """Manage trainings""",
 
     'description': """
-        Module quan ly cong viec va ho so mang phap ly
+        Open Academy module for managing trainings:
+            - training courses
+            - training sessions
+            - attendees registration
     """,
 
-    'author': "To Am Xinh",
-    'website': "http://www.toamxinh.vn",
+    'author': "Your Company",
+    'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Legal',
+    'category': 'Test',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'templates.xml',
-        'hoatdongpl.xml',
-        'hoso.xml',
+        'views/openacademy.xml',
+        'views/partner.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo.xml',
     ],
 }
+
