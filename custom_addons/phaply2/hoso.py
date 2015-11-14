@@ -6,7 +6,7 @@ class hoso(models.Model):
     _name = 'phaply.hoso'
 
     name = fields.Char(string='Ten ho so', required=True)
-    customer = fields.Many2one(comodel_name='res.partner', required=True)
+    customer = fields.Many2one(string='Khach hang', comodel_name='res.partner', required=True)
     phone = fields.Char(string='So dien thoai', related='customer.phone', required=True)
     request = fields.Text(string='Yeu cau KH')
     deadline = fields.Date(string='Ngay hen tra')
