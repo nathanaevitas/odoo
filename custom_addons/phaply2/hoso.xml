@@ -78,7 +78,7 @@
         </record>
 		
 		<record model="ir.actions.act_window" id="phaply_hoso_action">
-			<field name="name">phaply.hoso.action</field>
+			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
 			<field name="view_mode">tree,form,calendar,graph</field>
 		</record>

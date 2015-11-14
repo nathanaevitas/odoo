@@ -8,6 +8,7 @@ encoding//custom_addons/phaply2/__init__.py=utf-8
 encoding//custom_addons/phaply2/__openerp__.py=utf-8
 encoding//custom_addons/phaply2/controllers.py=utf-8
 encoding//custom_addons/phaply2/hoso.py=utf-8
+encoding//custom_addons/phaply2/models.py=utf-8
 encoding//custom_addons/students/models.py=utf-8
 encoding//custom_addons/study_room/__openerp__.py=utf-8
 encoding//custom_addons/study_room/controllers.py=utf-8
