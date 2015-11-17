@@ -83,7 +83,7 @@
 			<field name="view_mode">tree,form,calendar,graph</field>
 		</record>
 		
-		<menuitem name="Ho So" id="phaply_menu" sequence="85"/>
+		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
 		<menuitem name="Ho So" id="hoso_menu" parent="phaply_menu" sequence="10"/>
 		<menuitem name="Thong tin HS" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
     </data>

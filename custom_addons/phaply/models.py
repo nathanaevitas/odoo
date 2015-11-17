@@ -3,8 +3,6 @@
 from openerp import models, fields, api
 
 class res_partner_inherit(models.Model):
-    _name = 'res.partner'
-    
     _inherit = 'res.partner'
     
     design = fields.Boolean(string='Thiet ke')
