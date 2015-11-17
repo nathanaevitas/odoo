@@ -46,11 +46,11 @@
 			<field name="name">phaply.hoso.tree</field>
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
-				<tree string="Ho So Tree">
+				<tree string="Ho So Tree" colors="blue:state=='new';red:state=='working'">
 					<field name="name"/>
+					<field name="state" invisible="1"/>
 					<field name="customer"/>
 					<field name="phone"/>
-					<field name="request"/>
 					<field name="deadline"/>
 					<field name="cost"/>
 					<field name="paid"/>
@@ -88,7 +88,7 @@
                 </graph>
             </field>
         </record>
-		
+
 		<record model="ir.actions.act_window" id="phaply_hoso_action">
 			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
