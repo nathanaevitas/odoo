@@ -1,0 +1,78 @@
+<openerp>
+    <data>
+        <record model="workflow" id="wkf_hoso">
+            <field name="name">Phap ly workflow</field>
+            <field name="osv">phaply.hoso</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <record model="ir.actions.server" id="set_doc_to_new">
+            <field name="name">Set doc to New</field>
+            <field name="model_id" ref="model_phaply_hoso"/>
+            <field name="code">
+model.search([('id', 'in', context['active_ids'])]).action_new()
+            </field>
+        </record>
+        <record model="workflow.activity" id="new">
+            <field name="name">New</field>
+            <field name="wkf_id" ref="wkf_hoso"/>
+            <field name="flow_start" eval="True"/>
+            <field name="kind">dummy</field>
+            <field name="action"></field>
+            <field name="action_id" ref="set_doc_to_new"/>
+        </record>
+
+        <record model="ir.actions.server" id="set_doc_to_working">
+            <field name="name">Set doc to Working</field>
+            <field name="model_id" ref="model_phaply_hoso"/>
+            <field name="code">
+model.search([('id', 'in', context['active_ids'])]).action_working()
+            </field>
+        </record>
+        <record model="workflow.activity" id="working">
+            <field name="name">Working</field>
+            <field name="wkf_id" ref="wkf_hoso"/>
+            <field name="kind">dummy</field>
+            <field name="action"></field>
+            <field name="action_id" ref="set_doc_to_working"/>
+        </record>
+
+        <record model="ir.actions.server" id="set_doc_to_done">
+            <field name="name">Set doc to Done</field>
+            <field name="model_id" ref="model_phaply_hoso"/>
+            <field name="code">
+model.search([('id', 'in', context['active_ids'])]).action_done()
+            </field>
+        </record>
+        <record model="workflow.activity" id="done">
+            <field name="name">Done</field>
+            <field name="wkf_id" ref="wkf_hoso"/>
+            <field name="kind">dummy</field>
+            <field name="action"></field>
+            <field name="action_id" ref="set_doc_to_done"/>
+        </record>
+
+        <record model="workflow.transition" id="hoso_new_to_working">
+            <field name="act_from" ref="new"/>
+            <field name="act_to" ref="working"/>
+            <field name="signal">working</field>
+        </record>
+        <record model="workflow.transition" id="hoso_working_to_new">
+            <field name="act_from" ref="working"/>
+            <field name="act_to" ref="new"/>
+            <field name="signal">new</field>
+        </record>
+        <record model="workflow.transition" id="hoso_done_to_new">
+            <field name="act_from" ref="done"/>
+            <field name="act_to" ref="new"/>
+            <field name="signal">new</field>
+        </record>
+        <record model="workflow.transition" id="hoso_working_to_done">
+            <field name="act_from" ref="working"/>
+            <field name="act_to" ref="done"/>
+            <field name="signal">done</field>
+        </record>
+        
+    </data>
+</openerp>
+

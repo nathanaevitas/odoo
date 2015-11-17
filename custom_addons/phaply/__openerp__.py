@@ -28,6 +28,7 @@
         'security/ir.model.access.csv',
         'templates.xml',
         'views/hoso.xml',
+        'views/hoso_workflow.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

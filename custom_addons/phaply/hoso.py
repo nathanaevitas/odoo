@@ -31,3 +31,21 @@ class hoso(models.Model):
     note = fields.Text(string='Ghi chu')
     
     doc_id = fields.Many2one(string='Ho so', comodel_name='res.partner')
+    
+    state = fields.Selection([
+        ('new', "Moi nhan"),
+        ('working', "Dang lam"),
+        ('done', "Da xong"),
+    ])
+
+    @api.multi
+    def action_new(self):
+        self.state = 'new'
+
+    @api.multi
+    def action_working(self):
+        self.state = 'working'
+
+    @api.multi
+    def action_done(self):
+        self.state = 'done'

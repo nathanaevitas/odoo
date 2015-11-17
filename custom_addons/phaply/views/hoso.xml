@@ -5,6 +5,18 @@
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
 				<form string="Ho So Form">
+                    <header>
+                        <button name="new" type="workflow"
+                                string="Moi lam"
+                                states="working,done"/>
+                        <button name="working" type="workflow"
+                                string="Dang lam" states="new"
+                                class="oe_highlight"/>
+                        <button name="done" type="workflow"
+                                string="Da hoan tat" states="working"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
 					<sheet>
 						<group>
 							<field name="name"/>
