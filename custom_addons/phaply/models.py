@@ -7,6 +7,7 @@ class res_partner_inherit(models.Model):
     
     design = fields.Boolean(string='Thiet ke')
     construct = fields.Boolean(string='Thi cong')
+    legal = fields.Boolean(string='Phap ly')
     partner = fields.Many2one(string='Co hoi hop tac', comodel_name='phaply.cohoi')
     
     #hoso = fields.Many2many(string="Ho so", comodel_name='phaply2.hoso', relation='hosophaply_rel', column1='hoso_id', column2='name')

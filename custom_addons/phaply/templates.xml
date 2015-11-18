@@ -9,7 +9,8 @@
     				<group>
 						<field name="design"/>
 						<field name="construct"/>
-						<field name="partner"/>
+						<field name="legal"/>
+						<field name="partner"/>	
 					</group>
 				</xpath>
 				<xpath expr="//notebook" position="inside">

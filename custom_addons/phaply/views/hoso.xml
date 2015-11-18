@@ -29,7 +29,7 @@
 							<field name="address"/>
 							<field name="ward"/>
 							<field name="district"/>
-							<field name="emloyee"/>
+							<field name="emloyee" context="{'default_groups_ref': ['base.group_partner_manager']}/>
 							<field name="day_reception"/>
 							<field name="date_start"/>
 							<field name="date_end"/>
@@ -88,11 +88,29 @@
                 </graph>
             </field>
         </record>
-
+        
+        <record model="ir.ui.view" id="hoso_search_view">
+            <field name="name">phaply.search</field>
+            <field name="model">phaply.hoso</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="my_docs" string="Ho So Cua Toi"
+                            domain="[('emloyee', '=', uid)]"/>
+                    <group string="Group By">
+                        <filter name="by_emloyee" string="Nguoi lam"
+                                context="{'group_by': 'emloyee'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+		
 		<record model="ir.actions.act_window" id="phaply_hoso_action">
 			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
 			<field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context" eval="{'search_default_my_docs': 1}"/>
 		</record>
 		
 		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
