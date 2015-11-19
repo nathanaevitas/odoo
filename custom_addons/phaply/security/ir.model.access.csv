@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 phaply_manager,phaply manager,model_phaply_hoso,group_manager,1,1,1,1
+phaply_manager_nguoithuly,phaply manager,model_phaply_nguoithuly,group_manager,1,1,1,1
+phaply_manager_service,phaply manager,model_phaply_service,group_manager,1,1,1,1
 phaply_read,phaply all,model_phaply_hoso,,1,0,0,0
