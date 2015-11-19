@@ -13,8 +13,8 @@
 						<field name="partner"/>	
 					</group>
 				</xpath>
-				<xpath expr="//notebook" position="inside">
-					<page string="Ho so">
+				<notebook position="inside">
+					<page string="Ho so" attrs="{'invisible':[('legal', '!=', True)]}">
 						<field name="docs">
 							<field name="name"/>
 							<field name="deadline"/>
@@ -26,7 +26,7 @@
 							<field name="emloyee"/>
 						</field>
 					</page>
-				</xpath>
+				</notebook>
 			</field>					
 		</record>
     </data> 
