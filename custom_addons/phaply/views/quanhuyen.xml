@@ -1,0 +1,39 @@
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="quanhuyen_form_view">
+    		<field name="name">Quan Huyen</field>
+    		<field name="model">phaply.quanhuyen</field>
+    		<field name="arch" type="xml">
+    			<form>
+	    			<sheet>
+	    				<group>
+	    					<field name="name"/>
+	    				</group>
+	    			</sheet>
+    			</form>
+    		</field>
+    	</record>
+    
+    	<record model="ir.ui.view" id="quanhuyen_tree_view">
+    		<field name="name">Quan Huyen Tree</field>
+    		<field name="model">phaply.quanhuyen</field>
+    		<field name="arch" type="xml">
+    			<tree>
+    				<field name="name"/>
+    			</tree>
+    		</field>
+    	</record>
+    	
+    	<record model="ir.actions.act_window" id="quanhuyen_action">
+    		<field name="name">Quan huyen</field>
+    		<field name="res_model">phaply.quanhuyen</field>
+    		<field name="view_mode">tree,form</field>
+    	</record>
+    	
+    	<menuitem id="phaply_config_menu" name="Cai dat"
+                  parent="phaply_menu" sequence="100"/>
+        <!-- <menuitem id="quanhuyen_menu" name="Quan huyen"
+                  parent="phaply_config_menu"
+                  action="quanhuyen_action"/>  -->
+    </data>
+</openerp>

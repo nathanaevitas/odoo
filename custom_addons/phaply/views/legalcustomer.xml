@@ -21,7 +21,7 @@
             <field name="context" eval="{'search_default_legal_customers': 1}"/>
         </record>
         <menuitem id="configuration_menu" name="Khach hang"
-                  parent="phaply_menu"/>
+                  parent="phaply_menu" sequence="10"/>
         <menuitem id="contact_menu" name="Khach hang"
                   parent="configuration_menu"
                   action="contact_list_action"/>

@@ -18,3 +18,12 @@ class cohoihoptac(models.Model):
     
     name = fields.Char(string='Co hoi hop tac')
     
+class quanhuyen(models.Model):
+    _name = 'phaply.quanhuyen'
+    
+    name = fields.Char(string='Quan huyen')
+    
+class service(models.Model):
+    _name = 'phaply.service'
+    
+    name = fields.Char(string='Dich vu')

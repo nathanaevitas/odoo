@@ -1,0 +1,48 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="nguoithuly_form_view">
+			<field name="name">Nguoi Thu Ly	</field>
+			<field name="model">phaply.nguoithuly</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="type"/>
+							<field name="costperdoc"/>
+							<field name="advantage"/>
+							<field name="disadvantage"/>
+							<field name="district"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="nguoithuly_tree_view">
+			<field name="name">Nguoi Thu Ly</field>
+			<field name="model">phaply.nguoithuly</field>
+			<field name="arch" type="xml">
+				<tree string="Nguoi Thu Ly Tree">
+					<field name="name"/>
+					<field name="type"/>
+					<field name="costperdoc"/>
+					<field name="advantage"/>
+					<field name="disadvantage"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="nguoithuly_action">
+			<field name="name">Nguoi thu ly</field>
+			<field name="res_model">phaply.nguoithuly</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="thuly_menu" name="Nguoi thu ly"
+                  parent="phaply_menu" sequence="30"/>
+        <menuitem id="nguoithuly_menu" name="Nguoi thu ly"
+                  parent="thuly_menu"
+                  action="nguoithuly_action"/>
+    </data>
+</openerp>

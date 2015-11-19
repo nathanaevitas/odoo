@@ -16,9 +16,11 @@ class hoso(models.Model):
     
     address = fields.Char(string='Dia chi')
     ward = fields.Char(string='Xa / Phuong')
-    district = fields.Char(string='Quan / Huyen')
+    district = fields.Many2one(string='Quan / Huyen', comodel_name='res.country.state', )
     
     emloyee = fields.Many2one(string='Nguoi lam HS', comodel_name='res.users')
+    responsible_id = fields.Many2one(string='Nguoi thu ly', comodel_name='phaply.nguoithuly')
+    
     day_reception = fields.Date(string='Ngay tiep nhan')
     date_start = fields.Date(string='Ngay bien nhan')
     date_end = fields.Date(string='Ngay giao HS')
