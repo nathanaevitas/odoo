@@ -5,7 +5,7 @@ from openerp import models, fields, api
 class hoso(models.Model):
     _name = 'phaply.hoso'
 
-    name = fields.Char(string='Ten ho so', required=True)
+    name = fields.Char(string='Ma ho so', required=True)
     customer = fields.Many2one(string='Khach hang', comodel_name='res.partner', domain=[('customer','=',1)])
     phone = fields.Char(string='SDT', related='customer.mobile', required=True)
     request = fields.Text(string='Yeu cau KH')
@@ -57,4 +57,11 @@ class hoso(models.Model):
     @api.multi
     def action_done(self):
         self.state = 'done'
+        
+    _sql_constraints = [
+        ('name_unique',
+         'UNIQUE(name)',
+         "Ma ho so bi trung"),
+    ]
+
         

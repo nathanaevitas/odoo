@@ -2,4 +2,20 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 phaply_manager,phaply manager,model_phaply_hoso,group_manager,1,1,1,1
 phaply_manager_nguoithuly,phaply manager,model_phaply_nguoithuly,group_manager,1,1,1,1
 phaply_manager_service,phaply manager,model_phaply_service,group_manager,1,1,1,1
-phaply_read,phaply all,model_phaply_hoso,,1,0,0,0
+phaply_manager_doitacdv,phaply manager,model_phaply_doitacdv,group_manager,1,1,1,1
+phaply_manager_tendoitac,phaply manager,model_phaply_tendoitac,group_manager,1,1,1,1
+phaply_manager_hangmucdt,phaply manager,model_phaply_hangmucdt,group_manager,1,1,1,1
+
+phaply_employee,phaply manager,model_phaply_hoso,group_employee,1,1,1,0
+phaply_employee_nguoithuly,phaply manager,model_phaply_nguoithuly,group_employee,1,1,1,0
+phaply_employee_service,phaply manager,model_phaply_service,group_employee,1,1,1,0
+phaply_employee_doitacdv,phaply manager,model_phaply_doitacdv,group_employee,1,1,1,0
+phaply_employee_tendoitac,phaply manager,model_phaply_tendoitac,group_employee,1,1,1,0
+phaply_employee_hangmucdt,phaply manager,model_phaply_hangmucdt,group_employee,1,1,1,0
+
+phaply_read_hoso,phaply all,model_phaply_hoso,,1,0,0,0
+phaply_read_nguoithuly,phaply all,model_phaply_nguoithuly,,1,0,0,0
+phaply_read_service,phaply all,model_phaply_service,,1,0,0,0
+phaply_read_doitacdv,phaply all,model_phaply_doitacdv,,1,0,0,0
+phaply_read_tendoitac,phaply all,model_phaply_tendoitac,,1,0,0,0
+phaply_read_hangmucdt,phaply all,model_phaply_hangmucdt,,1,0,0,0
