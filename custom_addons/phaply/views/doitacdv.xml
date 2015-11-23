@@ -8,6 +8,7 @@
 					<sheet>
 						<group>
 							<field name="name"/>
+							<field name="mobile"/>
 							<field name="type"/>
 							<field name="cost"/>
 						</group>
@@ -22,6 +23,7 @@
 			<field name="arch" type="xml">
 				<tree string="Doi Tac DV Tree">
 					<field name="name"/>
+					<field name="mobile"/>
 					<field name="type"/>
 					<field name="cost"/>
 				</tree>
@@ -49,6 +51,11 @@
 					<sheet>
 						<group>
 							<field name="name"/>
+							<field name="mobile"/>
+							<field name="service"/>
+							<field name="district"/>
+							<field name="type"/>
+							<field name="cost"/>
 						</group>
 					</sheet>
 				</form>
@@ -61,6 +68,11 @@
 			<field name="arch" type="xml">
 				<tree string="Nguoi Thu Ly Tree">
 					<field name="name"/>
+					<field name="mobile"/>
+					<field name="service"/>
+					<field name="district"/>
+					<field name="type"/>
+					<field name="cost"/>
 				</tree>
 			</field>
 		</record>
