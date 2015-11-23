@@ -120,6 +120,8 @@
                                 context="{'group_by': 'emloyee'}"/>
                         <filter name="by_service" string="Dich vu"
                                 context="{'group_by': 'service'}"/>
+                        <filter name="by_district" string="Quan"
+                                context="{'group_by': 'district'}"/>
                     </group>
                 </search>
             </field>
@@ -129,7 +131,7 @@
 			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
 			<field name="view_mode">tree,form,calendar,graph</field>
-            <field name="context" eval="{'search_default_my_docs': 1}"/>
+            <field name="context" eval="{'search_default_my_docs': 0}"/>
 		</record>
         
         
