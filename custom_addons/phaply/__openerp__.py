@@ -29,7 +29,7 @@
         'templates.xml',
         'views/hoso.xml',
         'views/legalcustomer.xml',
-        'views/nguoithuly.xml',
+        'views/doitacdv.xml',
         'views/quanhuyen.xml',
         'views/service.xml',
         'views/hoso_workflow.xml',

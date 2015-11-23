@@ -1,0 +1,113 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="doitacdv_form_view">
+			<field name="name">Doi tac dich vu</field>
+			<field name="model">phaply.doitacdv</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="type"/>
+							<field name="cost"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="doitacdv_tree_view">
+			<field name="name">Doi tac dich vu</field>
+			<field name="model">phaply.doitacdv</field>
+			<field name="arch" type="xml">
+				<tree string="Doi Tac DV Tree">
+					<field name="name"/>
+					<field name="type"/>
+					<field name="cost"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="doitacdv_action">
+			<field name="name">Doi Tac Dich Vu</field>
+			<field name="res_model">phaply.doitacdv</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="doitacdv_menu" name="Doi tac dich vu"
+                  parent="phaply_menu" sequence="30"/>
+        <menuitem id="thuchidoitac_menu" name="Danh sach thu chi"
+                  parent="doitacdv_menu"
+                  action="doitacdv_action"/>
+                
+        <!-- Ten doi tac -->          
+        <record model="ir.ui.view" id="tendoitac_form_view">
+			<field name="name">Ten doi tac</field>
+			<field name="model">phaply.tendoitac</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="tendoitac_tree_view">
+			<field name="name">Nguoi Thu Ly</field>
+			<field name="model">phaply.tendoitac</field>
+			<field name="arch" type="xml">
+				<tree string="Nguoi Thu Ly Tree">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="tendoitac_action">
+			<field name="name">Ten doi tac</field>
+			<field name="res_model">phaply.tendoitac</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+        <menuitem id="tendoitac_menu" name="Danh sach doi tac"
+                  parent="doitacdv_menu"
+                  action="tendoitac_action"/>
+                  
+        <!-- Hang muc cua doi tac -->          
+        <record model="ir.ui.view" id="hangmucdt_form_view">
+			<field name="name">Hang muc dich vu</field>
+			<field name="model">phaply.hangmucdt</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="hangmucdt_tree_view">
+			<field name="name">Hang muc dich vu</field>
+			<field name="model">phaply.hangmucdt</field>
+			<field name="arch" type="xml">
+				<tree string="Nguoi Thu Ly Tree">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="hangmucdt_action">
+			<field name="name">Hang muc dich vu</field>
+			<field name="res_model">phaply.hangmucdt</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="hangmucdt_menu" name="Hang muc"
+                  parent="doitacdv_menu"
+                  action="hangmucdt_action"/>
+    </data>
+</openerp>

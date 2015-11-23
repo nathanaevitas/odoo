@@ -11,6 +11,7 @@ class hoso(models.Model):
     request = fields.Text(string='Yeu cau KH')
     deadline = fields.Date(string='Ngay hen tra')
     
+    service = fields.Many2one(string='Dich vu', comodel_name='phaply.service')
     cost = fields.Float(string='Phi dich vu')
     paid = fields.Float(string='Da ung')
     
@@ -19,7 +20,7 @@ class hoso(models.Model):
     district = fields.Many2one(string='Quan / Huyen', comodel_name='res.country.state', )
     
     emloyee = fields.Many2one(string='Nguoi lam HS', comodel_name='res.users')
-    responsible_id = fields.Many2one(string='Nguoi thu ly', comodel_name='phaply.nguoithuly')
+    responsible_id = fields.Many2one(string='Nguoi thu ly', comodel_name='res.users')
     
     day_reception = fields.Date(string='Ngay tiep nhan')
     date_start = fields.Date(string='Ngay bien nhan')
@@ -32,9 +33,12 @@ class hoso(models.Model):
     
     doc_id = fields.Many2one(string='Ho so', comodel_name='res.partner')
     
+    partner_paid = fields.One2many(string='Thu chi doi tac', comodel_name='phaply.doitacdv', inverse_name='hoso_id')
+    
     state = fields.Selection([
         ('new', "Moi nhan"),
         ('working', "Dang lam"),
+        ('fail', "That bai"),
         ('done', "Da xong"),
     ])
 
@@ -47,5 +51,10 @@ class hoso(models.Model):
         self.state = 'working'
 
     @api.multi
+    def action_fail(self):
+        self.state = 'fail'
+        
+    @api.multi
     def action_done(self):
         self.state = 'done'
+        

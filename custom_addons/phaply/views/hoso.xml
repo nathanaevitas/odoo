@@ -8,17 +8,21 @@
                     <header>
                         <button name="new" type="workflow"
                                 string="Moi lam"
-                                states="working,done"/>
+                                states="working,done,fail"/>
                         <button name="working" type="workflow"
                                 string="Dang lam" states="new"
                                 class="oe_highlight"/>
                         <button name="done" type="workflow"
                                 string="Da hoan tat" states="working"
                                 class="oe_highlight"/>
+                        <button name="fail" type="workflow"
+                        		string="That bai" states="working"
+                        		class="oe_highlight"/>
                         <field name="state" widget="statusbar"/>
                     </header>
 					<sheet>
 						<group>
+							<field name="service"/>
 							<field name="name"/>
 							<field name="customer"/>
 							<field name="phone"/>
@@ -38,7 +42,12 @@
 							<field name="reason"/>
 							<field name="note"/>
 						</group>
-					</sheet>
+						<notebook>
+							<page string="Thu chi doi tac">
+								<field name="partner_paid"/>
+							</page>
+						</notebook>
+					</sheet>		
 				</form>
 			</field>
 		</record>
@@ -48,6 +57,7 @@
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
 				<tree string="Ho So Tree" colors="blue:state=='new';red:state=='working'">
+					<field name="service"/>
 					<field name="name"/>
 					<field name="state" invisible="1"/>
 					<field name="customer"/>
@@ -55,8 +65,6 @@
 					<field name="deadline"/>
 					<field name="cost"/>
 					<field name="paid"/>
-					<field name="address"/>
-					<field name="ward"/>
 					<field name="district"/>
 					<field name="emloyee"/>
 					<field name="responsible_id"/>
@@ -99,24 +107,58 @@
                     <field name="name"/>
                     <filter name="my_docs" string="Ho So Cua Toi"
                             domain="[('emloyee', '=', uid)]"/>
+                    <filter name="new_docs" string="Ho So Moi"
+                            domain="[('state', '=', 'new')]"/>
+                    <filter name="working_docs" string="Ho So Dang Lam"
+                            domain="[('state', '=', 'working')]"/>
+                    <filter name="done_docs" string="Ho So Da Xong"
+                            domain="[('state', '=', 'done')]"/>
+                    <filter name="fail_docs" string="Ho So Da Huy"
+                            domain="[('state', '=', 'fail')]"/>
                     <group string="Group By">
                         <filter name="by_emloyee" string="Nguoi lam"
                                 context="{'group_by': 'emloyee'}"/>
+                        <filter name="by_service" string="Dich vu"
+                                context="{'group_by': 'service'}"/>
                     </group>
                 </search>
             </field>
         </record>
         
-		
-		<record model="ir.actions.act_window" id="phaply_hoso_action">
+        <record model="ir.actions.act_window" id="phaply_hoso_action">
 			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
 			<field name="view_mode">tree,form,calendar,graph</field>
             <field name="context" eval="{'search_default_my_docs': 1}"/>
 		</record>
+        
+        
+		<record model="ir.actions.act_window" id="phaply_hoso_new_action">
+			<field name="name">Ho So Phap Ly</field>
+			<field name="res_model">phaply.hoso</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context" eval="{'search_default_new_docs': 1}"/>
+		</record>
+		
+		<record model="ir.actions.act_window" id="phaply_hoso_working_action">
+			<field name="name">Ho So Phap Ly</field>
+			<field name="res_model">phaply.hoso</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context" eval="{'search_default_working_docs': 1}"/>
+		</record>
+		
+		<record model="ir.actions.act_window" id="phaply_hoso_done_action">
+			<field name="name">Ho So Phap Ly</field>
+			<field name="res_model">phaply.hoso</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context" eval="{'search_default_done_docs': 1}"/>
+		</record>
 		
 		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
 		<menuitem name="Ho So" id="hoso_menu" parent="phaply_menu" sequence="20"/>
-		<menuitem name="Thong tin HS" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
+		<menuitem name="Tat ca Ho so" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
+		<menuitem name="Ho so moi" id="phaply_hoso_new_menu" parent="hoso_menu" sequence="15" action="phaply_hoso_new_action"/>
+		<menuitem name="Ho so dang lam" id="phaply_hoso_working_menu" parent="hoso_menu" sequence="20" action="phaply_hoso_working_action"/>
+		<menuitem name="Ho so da xong" id="phaply_hoso_done_menu" parent="hoso_menu" sequence="25" action="phaply_hoso_done_action"/>
     </data>
 </openerp>

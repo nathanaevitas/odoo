@@ -51,6 +51,21 @@ model.search([('id', 'in', context['active_ids'])]).action_done()
             <field name="action"></field>
             <field name="action_id" ref="set_doc_to_done"/>
         </record>
+        
+        <record model="ir.actions.server" id="set_doc_to_fail">
+            <field name="name">Set doc to Fail</field>
+            <field name="model_id" ref="model_phaply_hoso"/>
+            <field name="code">
+model.search([('id', 'in', context['active_ids'])]).action_fail()
+            </field>
+        </record>
+        <record model="workflow.activity" id="fail">
+            <field name="name">Fail</field>
+            <field name="wkf_id" ref="wkf_hoso"/>
+            <field name="kind">dummy</field>
+            <field name="action"></field>
+            <field name="action_id" ref="set_doc_to_fail"/>
+        </record>
 
         <record model="workflow.transition" id="hoso_new_to_working">
             <field name="act_from" ref="new"/>
@@ -71,6 +86,16 @@ model.search([('id', 'in', context['active_ids'])]).action_done()
             <field name="act_from" ref="working"/>
             <field name="act_to" ref="done"/>
             <field name="signal">done</field>
+        </record>
+        <record model="workflow.transition" id="hoso_fail_to_new">
+            <field name="act_from" ref="fail"/>
+            <field name="act_to" ref="new"/>
+            <field name="signal">new</field>
+        </record>
+        <record model="workflow.transition" id="hoso_working_to_fail">
+            <field name="act_from" ref="working"/>
+            <field name="act_to" ref="fail"/>
+            <field name="signal">fail</field>
         </record>
         
     </data>
