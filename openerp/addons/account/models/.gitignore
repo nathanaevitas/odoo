@@ -1,0 +1,14 @@
+/__init__.pyc
+/account.pyc
+/account_analytic_line.pyc
+/account_bank_statement.pyc
+/account_invoice.pyc
+/account_journal_dashboard.pyc
+/account_move.pyc
+/account_payment.pyc
+/chart_template.pyc
+/company.pyc
+/partner.pyc
+/product.pyc
+/res_config.pyc
+/web_planner.pyc

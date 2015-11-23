@@ -1,0 +1,8 @@
+/__init__.pyc
+/make_procurement_product.pyc
+/orderpoint_procurement.pyc
+/stock_backorder_confirmation.pyc
+/stock_change_product_qty.pyc
+/stock_immediate_transfer.pyc
+/stock_move.pyc
+/stock_return_picking.pyc

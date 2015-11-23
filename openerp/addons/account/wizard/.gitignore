@@ -1,0 +1,15 @@
+/__init__.pyc
+/account_financial_report.pyc
+/account_invoice_refund.pyc
+/account_invoice_state.pyc
+/account_move_reversal.pyc
+/account_reconcile.pyc
+/account_report_aged_partner_balance.pyc
+/account_report_common.pyc
+/account_report_common_account.pyc
+/account_report_common_partner.pyc
+/account_report_general_ledger.pyc
+/account_report_trial_balance.pyc
+/account_unreconcile.pyc
+/account_validate_account_move.pyc
+/pos_box.pyc

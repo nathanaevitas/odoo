@@ -1,0 +1,11 @@
+/__init__.pyc
+/base_partner_merge.pyc
+/calendar_event.pyc
+/crm_lead.pyc
+/crm_stage.pyc
+/res_config.pyc
+/res_partner.pyc
+/res_users.pyc
+/sales_team.pyc
+/validate_email.pyc
+/web_planner.pyc

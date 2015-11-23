@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_partner_form_inherited">
+			<field name="name">res.partner.form.inherited</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+    		<field name="arch" type="xml">
+				<xpath expr="//notebook" position="before">
+    				<group>
+						<field name="design"/>
+						<field name="construct"/>
+						<field name="legal"/>
+						<field name="partner"/>	
+					</group>
+				</xpath>
+				<notebook position="inside">
+					<page string="Ho so" attrs="{'invisible':[('legal', '!=', True)]}">
+						<field name="docs">
+							<field name="name"/>
+							<field name="deadline"/>
+							<field name="cost"/>
+							<field name="paid"/>
+							<field name="day_reception"/>
+							<field name="date_start"/>
+							<field name="date_end"/>
+							<field name="emloyee"/>
+						</field>
+					</page>
+				</notebook>
+			</field>					
+		</record>
+    </data> 
+</openerp>

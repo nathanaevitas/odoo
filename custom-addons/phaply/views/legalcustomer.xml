@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <openerp>
+    <data>
+    
+    	<record model="ir.ui.view" id="phaply_customer_search_view">
+            <field name="name">phaply.customer.search</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="legal_customers" string="Phap Ly"
+                            domain="[('legal', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="contact_list_action">
+            <field name="name">Contacts</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_legal_customers': 1}"/>
+        </record>
+        <menuitem id="configuration_menu" name="Khach hang"
+                  parent="phaply_menu" sequence="10"/>
+        <menuitem id="contact_menu" name="Khach hang"
+                  parent="configuration_menu"
+                  action="contact_list_action"/>
+                  
+    </data>
+</openerp>

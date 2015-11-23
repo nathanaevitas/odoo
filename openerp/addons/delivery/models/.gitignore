@@ -1,0 +1,8 @@
+/__init__.pyc
+/delivery_carrier.pyc
+/delivery_price_rule.pyc
+/partner.pyc
+/product_template.pyc
+/sale_order.pyc
+/stock_move.pyc
+/stock_picking.pyc
