@@ -97,6 +97,11 @@ model.search([('id', 'in', context['active_ids'])]).action_fail()
             <field name="act_to" ref="fail"/>
             <field name="signal">fail</field>
         </record>
+        <record model="workflow.transition" id="hoso_new_to_fail">
+            <field name="act_from" ref="new"/>
+            <field name="act_to" ref="fail"/>
+            <field name="signal">fail</field>
+        </record>
         
     </data>
 </openerp>

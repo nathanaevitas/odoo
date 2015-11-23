@@ -7,7 +7,7 @@
 				<form string="Ho So Form">
                     <header>
                         <button name="new" type="workflow"
-                                string="Moi lam"
+                                string="Nhan lam"
                                 states="working,done,fail"/>
                         <button name="working" type="workflow"
                                 string="Dang lam" states="new"
@@ -16,7 +16,7 @@
                                 string="Da hoan tat" states="working"
                                 class="oe_highlight"/>
                         <button name="fail" type="workflow"
-                        		string="That bai" states="working"
+                        		string="That bai" states="new,working"
                         		class="oe_highlight"/>
                         <field name="state" widget="statusbar"/>
                     </header>
@@ -107,7 +107,7 @@
                     <field name="name"/>
                     <filter name="my_docs" string="Ho So Cua Toi"
                             domain="[('emloyee', '=', uid)]"/>
-                    <filter name="new_docs" string="Ho So Moi"
+                    <filter name="new_docs" string="Ho So Nhan Lam"
                             domain="[('state', '=', 'new')]"/>
                     <filter name="working_docs" string="Ho So Dang Lam"
                             domain="[('state', '=', 'working')]"/>
@@ -156,11 +156,19 @@
             <field name="context" eval="{'search_default_done_docs': 1}"/>
 		</record>
 		
+		<record model="ir.actions.act_window" id="phaply_hoso_fail_action">
+			<field name="name">Ho So Phap Ly</field>
+			<field name="res_model">phaply.hoso</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context" eval="{'search_default_fail_docs': 1}"/>
+		</record>
+		
 		<menuitem name="Phap Ly" id="phaply_menu" sequence="85"/>
 		<menuitem name="Ho So" id="hoso_menu" parent="phaply_menu" sequence="20"/>
-		<menuitem name="Tat ca Ho so" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
-		<menuitem name="Ho so moi" id="phaply_hoso_new_menu" parent="hoso_menu" sequence="15" action="phaply_hoso_new_action"/>
+		<menuitem name="Tat ca ho so" id="phaply_hoso_menu" parent="hoso_menu" sequence="10" action="phaply_hoso_action"/>
+		<menuitem name="Ho so nhan lam" id="phaply_hoso_new_menu" parent="hoso_menu" sequence="15" action="phaply_hoso_new_action"/>
 		<menuitem name="Ho so dang lam" id="phaply_hoso_working_menu" parent="hoso_menu" sequence="20" action="phaply_hoso_working_action"/>
 		<menuitem name="Ho so da xong" id="phaply_hoso_done_menu" parent="hoso_menu" sequence="25" action="phaply_hoso_done_action"/>
+		<menuitem name="Ho so that bai" id="phaply_hoso_fail_menu" parent="hoso_menu" sequence="30" action="phaply_hoso_fail_action"/>
     </data>
 </openerp>
