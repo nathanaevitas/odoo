@@ -22,6 +22,7 @@
                     </header>
 					<sheet>
 						<group>
+							<field name="create_date" string='Ngay tao'/>
 							<field name="service"/>
 							<field name="name"/>
 							<field name="customer"/>
@@ -57,6 +58,7 @@
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
 				<tree string="Ho So Tree" colors="blue:state=='new';red:state=='working'">
+					<field name="create_date" string='Ngay tao'/>
 					<field name="service"/>
 					<field name="name"/>
 					<field name="state" invisible="1"/>
