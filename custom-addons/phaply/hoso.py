@@ -41,7 +41,6 @@ class hoso(models.Model):
     due_date_from = fields.Date(string="Due date from")
     due_date_to = fields.Date(string="Due date to")
     
-    
     #@api.onchange('customer','service')
     #def _auto_generate_id(self):
     #    for record in self:
@@ -76,5 +75,5 @@ class hoso(models.Model):
          "Ma ho so bi trung"),
     ]
 
-    _order = 'create_date_only'
+    _order = 'create_date_only desc, id'
         
