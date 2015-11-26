@@ -7,7 +7,7 @@
     		<field name="arch" type="xml">
 				<xpath expr="//notebook" position="before">
     				<group>
-    					<field name="partner_create_date"/>
+    					<field name="partner_create_date" readonly="1"/>
 						<field name="design"/>
 						<field name="construct"/>
 						<field name="legal"/>
