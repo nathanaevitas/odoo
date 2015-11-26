@@ -4,8 +4,11 @@ from openerp import models, fields, api
 
 class hoso(models.Model):
     _name = 'phaply.hoso'
+    
+    create_date_only = fields.Date(string='Ngay tao', default=fields.Date.today)
 
     name = fields.Char(string='Ma ho so', required=True)
+    
     customer = fields.Many2one(string='Khach hang', comodel_name='res.partner', domain=[('customer','=',1)])
     phone = fields.Char(string='SDT', related='customer.mobile', required=True)
     request = fields.Text(string='Yeu cau KH')
@@ -17,7 +20,7 @@ class hoso(models.Model):
     
     address = fields.Char(string='Dia chi', related='customer.street')
     ward = fields.Char(string='Xa / Phuong')
-    district = fields.Many2one(string='Quan / Huyen', comodel_name='res.country.state', related='customer.state_id')
+    district = fields.Many2one(string='Quan / Huyen', related='customer.state_id', store=True)
     
     emloyee = fields.Many2one(string='Nguoi lam HS', comodel_name='res.users')
     responsible_id = fields.Many2one(string='Nguoi thu ly', comodel_name='res.users')
@@ -34,6 +37,15 @@ class hoso(models.Model):
     doc_id = fields.Many2one(string='Ho so', comodel_name='res.partner')
     
     partner_paid = fields.One2many(string='Thu chi doi tac', comodel_name='phaply.doitacdv', inverse_name='hoso_id')
+    
+    due_date_from = fields.Date(string="Due date from")
+    due_date_to = fields.Date(string="Due date to")
+    
+    
+    #@api.onchange('customer','service')
+    #def _auto_generate_id(self):
+    #    for record in self:
+    #        self.name= "%s-%s" % (self.customer, self.service)
     
     state = fields.Selection([
         ('new', "Nhan lam"),
@@ -64,4 +76,5 @@ class hoso(models.Model):
          "Ma ho so bi trung"),
     ]
 
+    _order = 'create_date_only desc'
         

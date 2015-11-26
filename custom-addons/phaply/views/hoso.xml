@@ -22,7 +22,7 @@
                     </header>
 					<sheet>
 						<group>
-							<field name="create_date" string='Ngay tao'/>
+							<field name="create_date_only" readonly="1"/>
 							<field name="service"/>
 							<field name="name"/>
 							<field name="customer"/>
@@ -58,8 +58,8 @@
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
 				<tree string="Ho So Tree" colors="blue:state=='new';red:state=='working'">
-					<field name="create_date" string='Ngay tao'/>
-					<field name="service"/>
+					<field name="create_date_only" readonly="1"/>
+					<field name="service"/>	
 					<field name="name"/>
 					<field name="state" invisible="1"/>
 					<field name="customer"/>
@@ -95,8 +95,9 @@
             <field name="model">phaply.hoso</field>
             <field name="arch" type="xml">
                 <graph string="Ho So Graph">
-                    <field name="doc_id"/>
+                    <field name="create_date"/>
                     <field name="district" type="measure"/>
+                    <field name="cost" type="measrue"/>
                 </graph>
             </field>
         </record>
@@ -117,6 +118,8 @@
                             domain="[('state', '=', 'done')]"/>
                     <filter name="fail_docs" string="Ho So Da Huy"
                             domain="[('state', '=', 'fail')]"/>
+                    <field name="due_date_from" filter_domain="[('date_due','&gt;=',self)]"/>
+					<field name="due_date_to" filter_domain="[('date_due','&lt;=',self)]"/>
                     <group string="Group By">
                         <filter name="by_emloyee" string="Nguoi lam"
                                 context="{'group_by': 'emloyee'}"/>
