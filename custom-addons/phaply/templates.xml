@@ -30,5 +30,18 @@
 				</notebook>
 			</field>					
 		</record>
+		<record model="ir.ui.view" id="view_partner_tree_inherited">
+			<field name="name">res.partner.tree.inherited</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_tree" />
+    		<field name="arch" type="xml">
+				<xpath expr="//field[@name='display_name']" position="before">
+					<field name="partner_create_date"/>
+				</xpath>
+				<xpath expr="//field[@name='phone']" position="after">
+					<field name="mobile"/>
+				</xpath>
+			</field>					
+		</record>
     </data> 
 </openerp>
