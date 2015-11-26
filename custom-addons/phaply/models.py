@@ -17,6 +17,18 @@ class res_partner_inherit(models.Model):
     
     _order = 'partner_create_date desc'
     
+    _sql_constraints = [
+        ('name_unique',
+         'UNIQUE(display_name)',
+         "Ma ho so bi trung"),
+        ('mobile_unique',
+         'UNIQUE(mobile)',
+         "SDT bi trung"),
+        ('email_unique',
+         'UNIQUE(email)',
+         "Ma ho so bi trung"),
+    ]
+    
 class cohoihoptac(models.Model):
     _name = 'phaply.cohoi'
     

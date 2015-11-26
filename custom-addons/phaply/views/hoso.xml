@@ -57,7 +57,7 @@
 			<field name="name">phaply.hoso.tree</field>
 			<field name="model">phaply.hoso</field>
 			<field name="arch" type="xml">
-				<tree string="Ho So Tree" colors="blue:state=='new';red:state=='working'">
+				<tree string="Ho So Tree" colors="green:state=='new';blue:state=='working';red:state=='fail'">
 					<field name="create_date_only" readonly="1"/>
 					<field name="service"/>	
 					<field name="name"/>
