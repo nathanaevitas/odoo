@@ -76,5 +76,5 @@ class hoso(models.Model):
          "Ma ho so bi trung"),
     ]
 
-    _order = 'create_date_only desc'
+    _order = 'create_date_only'
         
