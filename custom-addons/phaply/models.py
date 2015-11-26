@@ -15,6 +15,8 @@ class res_partner_inherit(models.Model):
     #hoso = fields.Many2many(string="Ho so", comodel_name='phaply2.hoso', relation='hosophaply_rel', column1='hoso_id', column2='name')
     docs = fields.One2many(comodel_name='phaply.hoso', inverse_name='customer')
     
+    _order = 'partner_create_date desc'
+    
 class cohoihoptac(models.Model):
     _name = 'phaply.cohoi'
     
