@@ -6,8 +6,6 @@
 			<field name="arch" type="xml">
 				<form string="Ho So Form">
                     <header>
-                    	<button string="Generate name" type="object" name="generate_record_name"/>
-                    	<button string="Clear name" type="object" name="clear_record_data"/>
                         <button name="new" type="workflow"
                                 string="Nhan lam"
                                 states="working,done,fail"/>
