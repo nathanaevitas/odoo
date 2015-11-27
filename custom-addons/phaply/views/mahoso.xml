@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+    	<record model="ir.sequence" id="phaply_hoso_sequence">
+            <field name="name">Ma HS Chung</field>
+            <field name="code">phaply.hoso.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">GP</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="implementation">standard</field>
+        </record>
+        <record model="ir.sequence" id="phaply_xp_sequence">
+            <field name="name">Ma ho so XPXD</field>
+            <field name="code">phaply.hoso.xp.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">XPXD</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="implementation">standard</field>
+        </record>
+		<record model="ir.sequence" id="phaply_hoso_hc_sequence">
+            <field name="name">Sequence For employee</field>
+            <field name="code">phaply.hoso.hc.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">HC</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</openerp>
+
