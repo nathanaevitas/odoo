@@ -5,6 +5,32 @@ from openerp import models, fields, api
 class hoso(models.Model):
     _name = 'phaply.hoso'
     
+    @api.onchange('service')
+    def _mahoso(self):
+        obj_mhs = self.env['ir.sequence']
+        return obj_mhs.next_by_code('phaply.hoso.xp.sequence')
+    
+    def generate_emp_code(self):
+        r = self.env['ir.sequence']
+        
+        if self.service['name'] == 'Xin phép xây dựng':
+            self.name = r.get('phaply.hoso.xp.sequence')
+        else:
+            self.name = 'test'
+    
+    @api.one    
+    def generate_record_name(self):
+    #Generates a random name between 9 and 15 characters long and writes it to the record.
+        self.write({'name': ''.join(self.env['ir.sequence'].get('phaply.hoso.sequence'))})
+    
+    @api.one
+    def clear_record_data(self):
+        self.write({
+            'name': '',
+    })
+        
+    dem = fields.Integer(string='Ho so', default='1')
+    
     create_date_only = fields.Date(string='Ngay tao', default=fields.Date.today)
 
     name = fields.Char(string='Ma ho so', required=True)

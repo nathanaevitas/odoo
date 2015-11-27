@@ -33,6 +33,7 @@
         'views/quanhuyen.xml',
         'views/service.xml',
         'views/hoso_workflow.xml',
+        'views/mahoso.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

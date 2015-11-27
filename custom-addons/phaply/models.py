@@ -43,3 +43,13 @@ class service(models.Model):
     _name = 'phaply.service'
     
     name = fields.Char(string='Dich vu')
+    
+    hoso_ids = fields.One2many(string='Ho so', comodel_name='phaply.hoso', inverse_name='service')
+    
+    hoso_count = fields.Integer(
+        string="Ho so count", compute='_get_hoso_count', store=True)
+    
+    @api.depends('hoso_ids')
+    def _get_hoso_count(self):
+        for r in self:
+            r.hoso_count = len(r.hoso_ids)

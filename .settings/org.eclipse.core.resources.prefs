@@ -1,7 +1,15 @@
 eclipse.preferences.version=1
+encoding//custom-addons/openacademy/controllers.py=utf-8
+encoding//custom-addons/openacademy/models.py=utf-8
+encoding//custom-addons/openacademy/wizard.py=utf-8
+encoding//custom-addons/phaply/__openerp__.py=utf-8
 encoding//custom-addons/phaply/doitacdv.py=utf-8
 encoding//custom-addons/phaply/hoso.py=utf-8
 encoding//custom-addons/phaply/models.py=utf-8
 encoding//openerp/addons/account/models/account.py=utf-8
+encoding//openerp/addons/account/models/account_move.py=utf-8
+encoding//openerp/addons/analytic/models/analytic.py=utf-8
 encoding//openerp/addons/crm/res_partner.py=utf-8
+encoding//openerp/addons/hr_payroll/hr_payroll.py=utf-8
 encoding//openerp/addons/project_timesheet/project_timesheet.py=utf-8
+encoding//openerp/api.py=utf-8

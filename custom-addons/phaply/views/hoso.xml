@@ -6,6 +6,8 @@
 			<field name="arch" type="xml">
 				<form string="Ho So Form">
                     <header>
+                    	<button string="Generate name" type="object" name="generate_record_name"/>
+                    	<button string="Clear name" type="object" name="clear_record_data"/>
                         <button name="new" type="workflow"
                                 string="Nhan lam"
                                 states="working,done,fail"/>
@@ -97,9 +99,21 @@
                 <graph string="Ho So Graph">
                     <field name="create_date"/>
                     <field name="district" type="measure"/>
-                    <field name="cost" type="measrue"/>
+                    <field name="dem" type="measrue"/>
                 </graph>
             </field>
+        </record>
+        
+        <record model="ir.ui.view" id="hoso_pivot_view">
+        	<field name="name">phaply.hoso.pivot</field>
+            <field name="model">phaply.hoso</field>
+            <field name="arch" type="xml">
+	        	<pivot string="Ho so Analysis" disable_linking="True">
+	                 <field name="service" type="row"/>
+	                 <field name="create_date_only" interval="month" type="col"/>
+	                 <field name="dem" type="measure"/>
+	             </pivot>
+	        </field>
         </record>
         
         <record model="ir.ui.view" id="hoso_search_view">
@@ -135,7 +149,7 @@
         <record model="ir.actions.act_window" id="phaply_hoso_action">
 			<field name="name">Ho So Phap Ly</field>
 			<field name="res_model">phaply.hoso</field>
-			<field name="view_mode">tree,form,calendar,graph</field>
+			<field name="view_mode">tree,form,calendar,graph,pivot</field>
             <field name="context" eval="{'search_default_my_docs': 0}"/>
 		</record>
         
